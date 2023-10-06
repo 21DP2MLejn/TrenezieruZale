@@ -1,30 +1,31 @@
 <template>
-    <div class="container">
-      <h2>{{ title }}</h2>
-      <input type="text" placeholder="email@example.com">
-      <input type="password" placeholder="password">
-      <button @click="login">{{ loginButtonText }}</button>
-      <router-link to="/register">{{ registerLinkText }}</router-link>
-      <router-link to="/login">{{ loginLinkText }}</router-link>
-      
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'LoginBox',
-    props: {
-      title: String,
-      loginButtonText: String,
-      registerLinkText: String,
-      loginLinkText: String,
+  <div class="container">
+    <h2>{{ title }}</h2>
+    <input type="text" placeholder="email@example.com" v-if="isRegister">
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="password">
+    <button @click="login">{{ loginButtonText }}</button>
+    <router-link  to="/register">{{ registerLinkText }}</router-link>
+    <router-link  to="/login">{{ loginLinkText }}</router-link>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'LoginBox',
+  props: {
+    title: String,
+    loginButtonText: String,
+    registerLinkText: String,
+    loginLinkText: String,
+    isRegister: Boolean,
+  },
+  methods: {
+    login() {
     },
-    methods: {
-      login() {
-      },
-    },
-  };
-  </script>
+  },
+};
+</script>
   
   <style scoped>
 
@@ -34,10 +35,11 @@
     border-radius: 1rem;
     border: 0.15rem solid var(--PastelGreen);
     margin-bottom: 1rem;
+    transition: 0.3s ease-in-out;
   }
 
   button:hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
   input{
