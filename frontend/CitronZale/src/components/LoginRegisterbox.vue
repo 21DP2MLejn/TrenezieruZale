@@ -1,18 +1,33 @@
 <template>
     <div class="container">
-        <h2>Login/SignUp</h2>
-        <input type="text" placeholder="email@example.com">
-        <input type="password" placeholder="password">
-        <router-link>Log In</router-link>
-        <router-link to="/register">Dont have an account? Register.</router-link>
+      <h2>{{ title }}</h2>
+      <input type="text" placeholder="email@example.com">
+      <input type="password" placeholder="password">
+      <button @click="login">{{ loginButtonText }}</button>
+      <router-link to="/register">{{ registerLinkText }}</router-link>
     </div>
-</template>
-
-<script>
-export default{
+  </template>
+  
+  <script>
+  export default {
     name: 'LoginBox',
-}
-</script>
-
-<style scoped>
-</style>
+    props: {
+      title: String,
+      loginButtonText: String,
+      registerLinkText: String,
+    },
+    methods: {
+      login() {
+        // Handle login logic here
+      },
+    },
+  };
+  </script>
+  
+  <style scoped>
+  .container {
+    width: 80vw;
+    height: 50vh;
+    background-color: var(--ShinyShamrock);
+  }
+  </style>
