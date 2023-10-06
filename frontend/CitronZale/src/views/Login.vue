@@ -1,7 +1,10 @@
 <template>
     <div>
-      <router-view></router-view>
-      <LoginBox />
+      <LoginBox
+        :title="'Login Page'"
+        :loginButtonText="'Log In'"
+        :registerLinkText="'Don\'t have an account? Register.'"
+      />
     </div>
   </template>
   
