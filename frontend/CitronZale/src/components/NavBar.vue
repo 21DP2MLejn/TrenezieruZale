@@ -15,10 +15,11 @@
       <li><router-link to="">AboutUs</router-link></li>
       <li><router-link to="">Clubs</router-link></li>
       <li><router-link to="">Profile</router-link></li>
+      <li>
+          <router-link to="/login">Join</router-link>
+      </li>
     </ul>
-    <div class="register-button">
-      <button><router-link to="/register">Register</router-link></button>
-    </div>
+
   </div>
 </template>
 
@@ -57,9 +58,6 @@ a {
 
 }
 
-.register-button button {
-  
-}
 
 .nav-list {
   width: 60vw;
@@ -85,7 +83,14 @@ a {
 
 li {
   margin-right: 3rem;
+  transition: 0.5s;
 }
+
+li:hover{
+  transform: scale(1.05);
+  color: var(--PastelGreen);
+}
+
 
 .bar {
   position: relative;
