@@ -17,3 +17,5 @@
     },
   }
   </script>
+
+  <style scoped></style>

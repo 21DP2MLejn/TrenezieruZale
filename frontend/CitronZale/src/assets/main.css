@@ -44,3 +44,13 @@ a{
   font-weight: var(--font-regular);
   font-size: 12px;
 }
+
+input{
+    font-family: var(--Font);
+    font-weight: var(--font-regular);
+}
+
+button{
+    font-family: var(--Font);
+    font-weight: var(--font-regular);
+}
