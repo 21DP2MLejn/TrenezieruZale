@@ -1,17 +1,35 @@
 <template>
-    <NavBar />
-</template>
-
-<script>
-import NavBar from '../components/NavBar.vue';
-
-export default{
-    components:{
-        NavBar,
-    }
-}
-
-</script>
+    <div>
+      <NavBar />
+      <ImageSlider />
+    </div>
+  </template>
+  
+  <script>
+  import NavBar from '../components/NavBar.vue';
+  import ImageSlider from '../components/ImageSlider.vue';
+  
+  export default {
+    components: {
+      NavBar,
+      ImageSlider,
+    },
+  };
+  </script>
 
 <style scoped>
+
+html
+
+body{
+    background-color: var(--TeaGreen);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+}
+
 </style>

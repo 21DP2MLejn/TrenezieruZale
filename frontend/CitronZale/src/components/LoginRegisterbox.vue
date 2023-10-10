@@ -1,13 +1,16 @@
 <template>
+<body>  
   <div class="container">
     <h2>{{ title }}</h2>
     <input type="text" placeholder="email@example.com" v-if="isRegister">
     <input type="text" placeholder="Username">
     <input type="password" placeholder="password">
-    <button @click="login">{{ loginButtonText }}</button>
+    <router-link to="/"><button>{{ loginButtonText }}</button></router-link>
     <router-link  to="/register">{{ registerLinkText }}</router-link>
     <router-link  to="/login">{{ loginLinkText }}</router-link>
+    <router-link to="/forgot-password" class="forgot-password" v-if="!isRegister"> forgot password?</router-link>
   </div>
+</body>
 </template>
 
 <script>
@@ -29,6 +32,17 @@ export default {
   
   <style scoped>
 
+  body{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    background-color:var(--Black) ;
+  }
+
   button{
     width: 6rem;
     height: 1.8rem;
@@ -43,14 +57,16 @@ export default {
 }
 
   input{
-    width: 16rem;
-    height: 1.8rem;
+    width: 16vw;
+    height: 2rem;
     padding-left: 1rem;
     border-radius: 1rem;
     border: 0.15rem solid var(--PastelGreen);
     margin-bottom: 1rem;
+    outline: none;
   }
   .container {
+    position: relative;
     width: 30vw;
     height: 50vh;
     background-color: var(--ShinyShamrock);
@@ -60,5 +76,13 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    left: calc(100vw - 30vw - 7rem);
+    top: 12.5rem;
+  }
+
+  .forgot-password{
+    position: relative;
+    text-decoration: none;
+    color: var(--Black);
   }
   </style>
