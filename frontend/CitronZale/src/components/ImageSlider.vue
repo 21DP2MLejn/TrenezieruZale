@@ -1,19 +1,35 @@
 <template>
     <div class="image-slider">
       <div class="slider-image-container">
+        <div class="text-container">
+        <h1>START NOW!</h1>
+        <h2>The only bad workout is one you didn't do.</h2>
+        <p>What are you waiting for? Join NOW and get your dream physique!
+          We have the best deals for everyone!
+        </p>
+        <ul>
+          <li>Spacious exercise hall</li>
+          <li>Wide variety of modern equipment</li>
+          <li>Friendly customer service</li>
+          <li>Professional coaches</li>
+          <li>Exclusive membership deals</li>
+          <li>OPEN 24/7</li>
+        </ul>
+      </div>
         <img :key="currentIndex" :src="currentImageSrc" alt="Slider Image" class="slider-image" />
       </div>
+     
       <div class="button-container">
-        <button @click="prevImage">Previous</button>
-        <button @click="nextImage">Next</button>
+        <button @click="prevImage"><p> &leftarrow; </p></button>
+        <button @click="nextImage"><p> &RightArrow; </p></button>
       </div>
     </div>
   </template>
   
   <script>
   import gymPicture1 from '@/assets/images/gym_picture3.jpg';
-  import gymPicture2 from '@/assets/images/gym_picture4.jpg';
-  import gymPicture3 from '@/assets/images/gym_picture5.jpg';
+  import gymPicture2 from '@/assets/images/gym_picture5.jpg';
+  import gymPicture3 from '@/assets/images/gym_picture1.jpg';
   
   export default {
     data() {
@@ -35,7 +51,7 @@
           this.currentIndex = (this.currentIndex + 1) % this.images.length;
           setTimeout(() => {
             this.transitioning = false;
-          }, 1000); // Adjust the duration to match your transition duration
+          }, 1000); 
         }
       },
       prevImage() {
@@ -44,7 +60,7 @@
           this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
           setTimeout(() => {
             this.transitioning = false;
-          }, 1000); // Adjust the duration to match your transition duration
+          }, 1000);
         }
       },
     },
@@ -57,6 +73,20 @@
   </script>
   
   <style scoped>
+
+  .text-container{
+    z-index: 2;
+    color: var(--Black);
+    position: absolute;
+    width: 30vw;
+    height: 95vh;
+    background-color: var(--TeaGreen);
+  }
+
+  h1,h2{
+    font-weight: var(--font-bold);
+  }
+  
   .image-slider {
     display: flex;
     justify-content: center;
@@ -65,18 +95,20 @@
   }
   
   .slider-image-container {
-    width: 60vw;
-    max-height: 70vh;
+    width: 100vw;
+    max-height: 92.1vh;
     overflow: hidden;
     position: relative;
-    top: 5rem;
+    top: 4.6rem;
   }
   
   .slider-image {
-    width: 100%;
+    width: 90%;
     height: auto;
     opacity: 1;
-    animation: fade 1.5s forwards; /* Adjust the duration here (e.g., 2s) */
+    animation: fade 1.5s forwards;
+    position: relative;
+    left: 12rem;
   }
   
   @keyframes fade {
@@ -90,6 +122,8 @@
   
   .button-container {
     z-index: 10000;
+    position: relative;
+    left: 10rem;
   }
   
   button {
@@ -115,7 +149,7 @@
 
     .slider-image-container {
         top: 20rem;
-        width: 80vw;
+        width: 100vw;
     }
 
     button{

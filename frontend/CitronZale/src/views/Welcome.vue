@@ -1,9 +1,13 @@
 <template>
-    <div>
-      <NavBar />
+<body>
+    <NavBar />
+    <div class="container">
       <ImageSlider />
+      <div class="text-container">
+      </div>
     </div>
-  </template>
+  </body>
+</template>
   
   <script>
   import NavBar from '../components/NavBar.vue';

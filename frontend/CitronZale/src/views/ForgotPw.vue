@@ -12,7 +12,7 @@
 
         </div>
         <div class="image-container">
-            <img src="../assets/confused.png" alt="???@!">
+            <img src="../assets/images/confused.png" alt="???@!">
         </div>
     </div>
 </body>
@@ -101,7 +101,7 @@ button{
 
   img{
     position: absolute;
-    top: 27rem;
+    top: 25rem;
     left: -15rem;
     width: 45vw;
 }

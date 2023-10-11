@@ -19,7 +19,6 @@
           <router-link to="/login">Join</router-link>
       </li>
     </ul>
-
   </div>
 </template>
 
@@ -42,6 +41,7 @@
   top: 0.3rem;
   left: 0.3rem;
   position: relative;
+  z-index: 1000;
 }
 
 a {
@@ -113,10 +113,10 @@ li:hover{
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 3.6rem;
+    top: 2.7rem;
     left: 0;
     width: 100%;
-    height: auto; /* Change the height to "auto" to accommodate variable content */
+    height: auto; 
     background-color: var(--ShinyShamrock);
     text-align: center;
     border-bottom: 2px solid var(--TeaGreen);
