@@ -1,4 +1,6 @@
 <template>
+<body>
+  <div class="background">
   <div class="image-slider">
     <div class="slider-image-container">
       <div class="text-container">
@@ -21,6 +23,9 @@
       <button @click="nextImage"><p> &RightArrow; </p></button>
     </div>
   </div>
+</div>
+</body>
+
 </template>
 
 
@@ -73,92 +78,121 @@ export default {
 };
 </script>
   
-  <style scoped>
+<style scoped>
 
-  .text-container{
-    z-index: 2;
-    color: var(--Black);
-    position: absolute;
-    width: 30vw;
-    height: 100vh;
-    background-color: var(--TeaGreen);
-  }
+body{
+  width: 100vw;
+  height: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+}
+.text-container {
+  z-index: 2;
+  color: var(--Black);
+  position: absolute;
+  width: 30vw;
+  height: 100vh;
+  background-color: var(--TeaGreen);
+}
 
-  h1,h2{
-    font-weight: var(--font-bold);
+h1, h2 {
+  font-weight: var(--font-bold);
+}
+
+.image-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.slider-image-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  top: 4.6rem;
+}
+
+.slider-image {
+  width: 90%;
+  height: auto;
+  opacity: 1;
+  animation: fade 1.5s forwards;
+  position: relative;
+  left: 12rem;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
   }
-  
-  .image-slider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  100% {
+    opacity: 1;
   }
-  
+}
+
+.button-container {
+  z-index: 10000;
+  position: relative;
+  left: 10rem;
+}
+
+button {
+  margin: 10px;
+  width: 6rem;
+  height: 3rem;
+  font-size: 16px;
+  background-color: var(--ShinyShamrock);
+  color: var(--White);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10000;
+  transition: 0.5s;
+  position: relative;
+  opacity: 50%;
+  left: 8rem;
+}
+
+button:hover {
+  background-color: var(--PastelGreen);
+  transform: scale(1.05);
+  opacity: 100%;
+}
+
+  @media (max-width: 992px) {
   .slider-image-container {
     width: 100vw;
-    max-height: 92.1vh;
-    overflow: hidden;
-    position: relative;
-    top: 4.6rem;
+    height: 70vh;
   }
-  
-  .slider-image {
-    width: 90%;
-    height: auto;
-    opacity: 1;
-    animation: fade 1.5s forwards;
-    position: relative;
-    left: 12rem;
-  }
-  
-  @keyframes fade {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  .button-container {
-    z-index: 10000;
-    position: relative;
-    left: 10rem;
-  }
-  
+
   button {
-    margin: 10px;
-    width: 6rem;
-    height: 3rem;
-    font-size: 16px;
-    background-color: var(--ShinyShamrock);
-    color: var(--White);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 10000;
-    transition: 0.5s;
-    position: relative;
-    opacity: 50%;
-    left: 8rem;
+    display: none;
   }
-  
-  button:hover {
-    background-color: var(--PastelGreen);
-    transform: scale(1.05);
-    opacity: 100%;
+}
+
+@media (max-width: 721px) {
+  .text-container {
+    color: var(--Black);
+    width: 100%;
+    height: auto; 
+    top: 30rem;
   }
 
-  @media (max-width: 992px){
-    .slider-image-container {
-        width: 100vw;
-        height: 70vh;
-    }
-
-    button{
-      display: none;
-    }
-
+  .slider-image-container {
+    height: 100vh;
+    width: 100vw;
   }
-  </style>
+
+  .slider-image {
+    left: 0;
+    width: 100vw;
+  }
+
+}
+</style>

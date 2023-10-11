@@ -32,6 +32,7 @@
   top: 0;
   left: 0;
   border-bottom: 2px solid var(--TeaGreen);
+  z-index: 10000;
 }
 
 .image-container {
