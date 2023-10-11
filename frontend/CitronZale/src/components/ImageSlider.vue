@@ -1,12 +1,10 @@
 <template>
-    <div class="image-slider">
-      <div class="slider-image-container">
-        <div class="text-container">
+  <div class="image-slider">
+    <div class="slider-image-container">
+      <div class="text-container">
         <h1>START NOW!</h1>
         <h2>The only bad workout is one you didn't do.</h2>
-        <p>What are you waiting for? Join NOW and get your dream physique!
-          We have the best deals for everyone!
-        </p>
+        <p>What are you waiting for? Join NOW and get your dream physique! We have the best deals for everyone!</p>
         <ul>
           <li>Spacious exercise hall</li>
           <li>Wide variety of modern equipment</li>
@@ -16,61 +14,64 @@
           <li>OPEN 24/7</li>
         </ul>
       </div>
-        <img :key="currentIndex" :src="currentImageSrc" alt="Slider Image" class="slider-image" />
-      </div>
-     
-      <div class="button-container">
-        <button @click="prevImage"><p> &leftarrow; </p></button>
-        <button @click="nextImage"><p> &RightArrow; </p></button>
-      </div>
+      <img :key="currentIndex" :src="currentImageSrc" alt="Slider Image" class="slider-image" />
     </div>
-  </template>
-  
-  <script>
-  import gymPicture1 from '@/assets/images/gym_picture3.jpg';
-  import gymPicture2 from '@/assets/images/gym_picture5.jpg';
-  import gymPicture3 from '@/assets/images/gym_picture1.jpg';
-  
-  export default {
-    data() {
-      return {
-        images: [gymPicture1, gymPicture2, gymPicture3],
-        currentIndex: 0,
-        transitioning: false,
-      };
+    <div class="button-container">
+      <button @click="prevImage"><p> &leftarrow; </p></button>
+      <button @click="nextImage"><p> &RightArrow; </p></button>
+    </div>
+  </div>
+</template>
+
+
+<script>
+import gymPicture1 from '@/assets/images/gym_picture3.jpg';
+import gymPicture2 from '@/assets/images/gym_picture5.jpg';
+import gymPicture3 from '@/assets/images/gym_picture1.jpg';
+
+export default {
+  data() {
+    return {
+      images: [gymPicture1, gymPicture2, gymPicture3],
+      currentIndex: 0,
+      transitioning: false,
+    };
+  },
+  computed: {
+    currentImageSrc() {
+      return this.images[this.currentIndex];
     },
-    computed: {
-      currentImageSrc() {
-        return this.images[this.currentIndex];
-      },
+  },
+  methods: {
+    nextImage() {
+      if (!this.transitioning) {
+        this.transitioning = true;
+        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+        setTimeout(() => {
+          this.transitioning = false;
+        }, 1000);
+      }
     },
-    methods: {
-      nextImage() {
-        if (!this.transitioning) {
-          this.transitioning = true;
-          this.currentIndex = (this.currentIndex + 1) % this.images.length;
-          setTimeout(() => {
-            this.transitioning = false;
-          }, 1000); 
-        }
-      },
-      prevImage() {
-        if (!this.transitioning) {
-          this.transitioning = true;
-          this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
-          setTimeout(() => {
-            this.transitioning = false;
-          }, 1000);
-        }
-      },
+    prevImage() {
+      if (!this.transitioning) {
+        this.transitioning = true;
+        this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+        setTimeout(() => {
+          this.transitioning = false;
+        }, 1000);
+      }
     },
-    mounted() {
-      setInterval(() => {
-        this.nextImage();
-      }, 7000);
-    },
-  };
-  </script>
+  },
+  props: {
+    isNavOpen: Boolean,
+  },
+  mounted() {
+    setInterval(() => {
+      this.nextImage();
+    }, 7000);
+  },
+};
+</script>
   
   <style scoped>
 
@@ -79,7 +80,7 @@
     color: var(--Black);
     position: absolute;
     width: 30vw;
-    height: 95vh;
+    height: 100vh;
     background-color: var(--TeaGreen);
   }
 
@@ -139,21 +140,24 @@
     z-index: 10000;
     transition: 0.5s;
     position: relative;
+    opacity: 50%;
+    left: 8rem;
   }
   
   button:hover {
     background-color: var(--PastelGreen);
+    transform: scale(1.05);
+    opacity: 100%;
   }
 
   @media (max-width: 992px){
-
     .slider-image-container {
-        top: 20rem;
         width: 100vw;
+        height: 70vh;
     }
 
     button{
-        top: 15rem;
+      display: none;
     }
 
   }

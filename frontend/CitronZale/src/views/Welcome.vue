@@ -1,22 +1,21 @@
 <template>
 <body>
-    <NavBar />
-    <div class="container">
-      <ImageSlider />
-      <div class="text-container">
-      </div>
-    </div>
-  </body>
+  <NavBar />
+  <ImageSlider />
+  <Reasons />
+</body>
 </template>
   
   <script>
   import NavBar from '../components/NavBar.vue';
   import ImageSlider from '../components/ImageSlider.vue';
+  import Reasons from '../components/Reasons.vue';
   
   export default {
     components: {
       NavBar,
       ImageSlider,
+      Reasons,
     },
   };
   </script>

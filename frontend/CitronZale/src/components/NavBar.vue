@@ -68,6 +68,7 @@ a {
   position: relative;
   left: 8rem;
   top: -3.5rem;
+  z-index: 1000;
 }
 
 .toggle-button {
@@ -113,7 +114,7 @@ li:hover{
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 2.7rem;
+    top: 2.55rem;
     left: 0;
     width: 100%;
     height: auto; 

@@ -23,14 +23,9 @@ html{
     overflow-x: hidden ;
 }
 
-h1{
+h1,h2,h3{
     font-family: var(--Font);
     font-weight: var(--font-regular);
-}
-
-h2{
-    font-family: var(--Font);
-    font-weight: var(--font-regular); 
 }
 
 p{
