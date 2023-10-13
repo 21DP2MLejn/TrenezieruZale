@@ -7,6 +7,9 @@
     <div class="reasons">
       <Reasons />
     </div>
+    <div class="introduction">
+      <Introduction />
+    </div>
   </div>
 </template>
 
@@ -14,12 +17,14 @@
   import NavBar from '../components/NavBar.vue';
   import ImageSlider from '../components/ImageSlider.vue';
   import Reasons from '../components/Reasons.vue';
+  import Introduction from '../components/Introduction.vue';
   
   export default {
     components: {
       NavBar,
       ImageSlider,
       Reasons,
+      Introduction,
     },
   };
   </script>
@@ -51,6 +56,16 @@ body{
   left: 0;
   padding: 0;
   margin: 0;
+}
+
+.introduction{
+  position: relative;
+  top: 67rem;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100vw;
 }
 
 </style>

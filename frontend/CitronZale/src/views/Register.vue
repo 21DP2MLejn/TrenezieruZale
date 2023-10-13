@@ -1,4 +1,5 @@
 <template>
+<body>
   <div>
     <LoginBox
       :title="'Register Page'"
@@ -7,6 +8,12 @@
       :isRegister="true"
     />
   </div>
+  <div class="background">
+    <div class="image-container">
+        <img src="../assets/Images/gym_picture5.jpg" alt="Login-Background">
+    </div>
+  </div>
+</body>
 </template>
 
 <script>
@@ -21,4 +28,10 @@ export default {
 </script>
 
 <style scoped>
+
+body{
+  background-image: url(../assets/Images/gym_picture6.jpg);
+  background-repeat: no-repeat;
+}
+
 </style>
