@@ -53,14 +53,14 @@ body{
 .reasons{
   position: relative;
   top: 51rem;
-  left: 0;
+  left: -3rem;
   padding: 0;
   margin: 0;
 }
 
 .introduction{
   position: relative;
-  top: 67rem;
+  top: 50rem;
   left: 0;
   margin: 0;
   padding: 0;
