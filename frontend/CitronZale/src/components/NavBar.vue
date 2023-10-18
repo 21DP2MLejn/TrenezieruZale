@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="image-container">
-      <img src="" alt="logo">
+      <router-link to="/"><img src="@/assets/Images/Logo.png" alt="logo" class="logo-image" /></router-link>
     </div>
     <button class="toggle-button" @click="toggleNav">
       <span class="bar"></span>
@@ -9,20 +9,32 @@
       <span class="bar"></span>
     </button>
     <ul class="nav-list" :class="{ 'active': isNavOpen }">
-      <li><router-link to="">Prices</router-link></li>
+      <li><router-link to="/prices">Prices</router-link></li>
       <li><router-link to="">Schedule</router-link></li>
       <li><router-link to="">Trainings</router-link></li>
       <li><router-link to="">AboutUs</router-link></li>
       <li><router-link to="">Clubs</router-link></li>
       <li><router-link to="">Profile</router-link></li>
       <li>
-          <router-link to="/login">Join</router-link>
+        <router-link to="/login">Join</router-link>
       </li>
     </ul>
   </div>
 </template>
 
 <style scoped>
+.logo-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.image-button{
+  width: 4rem;
+  height: 4rem;
+  outline: none;
+}
+
 .container {
   background-color: var(--ShinyShamrock);
   height: 8vh;

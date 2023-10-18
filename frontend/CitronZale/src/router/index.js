@@ -3,6 +3,7 @@ import WelcomePage from '../views/Welcome.vue'
 import LoginPage from '../views/Login.vue'
 import RegisterPage from '../views/Register.vue'
 import ForgotPassword from '../views/ForgotPw.vue'
+import Prices from '../views/Prices.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/forgot-password',
       name: 'forgot-password',
       component: ForgotPassword
+    },
+    {
+      path: '/prices',
+      name: 'prices',
+      component: Prices
     },
   ]
 })
