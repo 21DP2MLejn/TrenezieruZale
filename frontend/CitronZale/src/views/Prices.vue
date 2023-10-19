@@ -78,9 +78,6 @@ export default {
 
 <style scoped>
 
-input{
-    
-}
   .prices-container {
     display: flex;
     align-content: center;
