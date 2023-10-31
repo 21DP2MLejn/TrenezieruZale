@@ -10,10 +10,6 @@
       <div class="image-container2">
         <img src="../assets/Images/gym_picture8.jpg" alt="image">
       </div>
-      <div class="about-us">
-        <h2>About Us</h2>
-        <p>CitronZale is not just a gym; it's a lifestyle transformation hub. At CitronZale, we've redefined fitness as a holistic journey towards health and wellness. Our state-of-the-art facility boasts cutting-edge equipment, expert trainers, and a vibrant atmosphere. We offer a diverse range of fitness programs, from intense cross-training to serene yoga sessions, tailored for individuals of all levels. CitronZale prioritizes not just physical fitness, but also mental and emotional well-being. With a community of motivated members and a commitment to empowering personal growth, we're more than just a gym; we're your path to a healthier, happier, and more fulfilling life. Join CitronZale today and start your transformative journey.</p>
-      </div>
     </div>
   </template>
   

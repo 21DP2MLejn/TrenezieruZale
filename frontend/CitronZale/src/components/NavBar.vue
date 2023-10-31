@@ -12,7 +12,7 @@
       <li><router-link to="/prices">Prices</router-link></li>
       <li><router-link to="">Schedule</router-link></li>
       <li><router-link to="">Trainings</router-link></li>
-      <li><router-link to="">AboutUs</router-link></li>
+      <li><router-link to="/about-us">AboutUs</router-link></li>
       <li><router-link to="">Clubs</router-link></li>
       <li><router-link to="">Profile</router-link></li>
       <li>
@@ -117,7 +117,7 @@ li:hover{
   transition: 0.4s;
 }
 
-/* Media query for mobile */
+
 @media (max-width: 992px) {
   .toggle-button {
     display: block;
@@ -140,7 +140,6 @@ li:hover{
     display: flex;
   }
 
-  /* Style for the active button (when the menu is open) */
   .toggle-button.active .bar:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);
   }
