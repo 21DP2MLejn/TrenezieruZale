@@ -10,9 +10,9 @@
     </button>
     <ul class="nav-list" :class="{ 'active': isNavOpen }">
       <li><router-link to="/prices">Prices</router-link></li>
-      <li><router-link to="">Schedule</router-link></li>
+      <li><router-link to="/schedule">Schedule</router-link></li>
       <li><router-link to="">Trainings</router-link></li>
-      <li><router-link to="/about-us">AboutUs</router-link></li>
+      <li><router-link to="/about-us">About Us</router-link></li>
       <li><router-link to="">Clubs</router-link></li>
       <li><router-link to="">Profile</router-link></li>
       <li>
