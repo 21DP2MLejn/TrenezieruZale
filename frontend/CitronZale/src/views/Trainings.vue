@@ -8,9 +8,9 @@
         <img src="../assets/Images/group_workout.png">
     </div>
     <div class="card-container">
-        <div class="card group"> Group Trainings</div>
-        <div class="card personal">Personal Trainings</div>
-        <div class="card trainers">Trainers</div>
+        <div class="card group"> <h2>Group Trainings</h2></div>
+        <div class="card personal"><h2>Personal Trainings</h2> </div>
+        <div class="card trainers"><h2>Trainers</h2></div>
     </div>
 </main>
 </template>
@@ -84,10 +84,41 @@ h1{
     width: 20rem;
     height: 30rem;
     background-color: var(--ShinyShamrock);
-    display: inline-flex;
     margin: 1rem;
     position: relative;
-    color: white;
+    color: var(--White);
+}
+
+.group{
+    background-image: url('../assets/Images/group_workout2.jpg') ;
+    background-size: cover;
+    filter: brightness(50%);
+}
+
+.personal{
+    background-image: url('../assets/Images/personal_workout.jpg') ;
+    background-size: cover;
+    filter: brightness(50%);
+}
+
+
+.trainers{
+    background-image: url('../assets/Images/trainers.jpg') ;
+    background-size: cover;
+    filter: brightness(50%);
+}
+
+.card:hover{
+    transform: scale(1.02);
+    filter: brightness(100%);
+    color: var(--Black);
+}
+
+.card h2{
+    position: relative;
+    top: 14rem;
+    font-weight: var(--font-bold);
+
 }
 
 @media (max-width: 1076px){
