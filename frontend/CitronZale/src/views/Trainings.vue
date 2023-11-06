@@ -1,5 +1,6 @@
 <template>
 <main>
+<body>
     <div class="navbar">
         <NavBar />
     </div>
@@ -8,10 +9,29 @@
         <img src="../assets/Images/group_workout.png">
     </div>
     <div class="card-container">
-        <div class="card group"> <h2>Group Trainings</h2></div>
-        <div class="card personal"><h2>Personal Trainings</h2> </div>
-        <div class="card trainers"><h2>Trainers</h2></div>
+        <div class="group-training-container">
+            <router-link to="/group-trainings" active-class="active-link" exact-active-class="exact-active-link">
+                <div class="card group">
+                    <h2 class="title" id="group">Group Trainings</h2>
+                </div>
+            </router-link>
+        </div>
+        <div class="personal-training-container">
+            <router-link to="/personal-trainings" active-class="active-link" exact-active-class="exact-active-link">
+                <div class="card personal">
+                    <h2 class="title" id="personal">Personal Trainings</h2>
+                </div>
+            </router-link>
+        </div>
+        <div class="trainers-container">
+            <router-link to="/trainers" active-class="active-link" exact-active-class="exact-active-link">
+                <div class="card trainers">
+                    <h2 class="title" id="trainers">Trainers</h2>
+                </div>
+            </router-link>
+        </div>
     </div>
+</body>
 </main>
 </template>
 
@@ -26,6 +46,29 @@ export default{
 </script>
 
 <style scoped>
+
+.active-link {
+    text-decoration: none;
+    color: var(--Black);
+}
+
+.exact-active-link {
+    text-decoration: none;
+    color: var(--Black);
+}
+.group-training-container, .personal-training-container, .trainers-container{
+    text-decoration: none;
+    color: var(--Black);
+}
+
+body{
+    background-color: var(--TeaGreen);
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+}
 
 main{
     padding: 0;
@@ -63,6 +106,7 @@ img{
 h1{
     font-weight: var(--font-bold);
     font-size: 5vw;
+    color: var(--ShinyShamrock);
 }
 
 .card-container{
@@ -75,18 +119,19 @@ h1{
 }
 
 .card{
-    border-radius: 25px;
-    margin: 2rem;
-    transition: 0.5s;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    width: 20rem;
-    height: 30rem;
-    background-color: var(--ShinyShamrock);
-    margin: 1rem;
-    position: relative;
-    color: var(--White);
+   border-radius: 25px;
+   margin: 2rem;
+   transition: 0.5s;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 20rem;
+   height: 30rem;
+   background-color: var(--ShinyShamrock);
+   margin: 1rem;
+   position: relative;
+   cursor: pointer;
 }
 
 .group{
@@ -111,14 +156,13 @@ h1{
 .card:hover{
     transform: scale(1.02);
     filter: brightness(100%);
-    color: var(--Black);
+    color: var(--ShinyShamrock);
 }
 
-.card h2{
+.card h2, router-link{
     position: relative;
-    top: 14rem;
     font-weight: var(--font-bold);
-
+    text-decoration: none;
 }
 
 @media (max-width: 1076px){
@@ -126,6 +170,7 @@ h1{
         width: 15rem;
         height: 25rem;
     }
+
 }
 
 </style>
