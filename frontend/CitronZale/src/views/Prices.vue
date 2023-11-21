@@ -106,7 +106,6 @@ export default {
         longtermButton.style.color = '';
         regulersub.style.display = 'none';
         flexsub.style.display = 'none';
-
       }
     }
   }

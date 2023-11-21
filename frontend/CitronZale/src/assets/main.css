@@ -41,6 +41,8 @@ a{
   font-family: var(--Font);
   font-weight: var(--font-regular);
   font-size: 12px;
+  text-decoration: none;
+  color: inherit;
 }
 
 input{

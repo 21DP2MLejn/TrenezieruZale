@@ -10,25 +10,25 @@
     </div>
     <div class="card-container">
         <div class="group-training-container">
-            <router-link to="/group-trainings" active-class="active-link" exact-active-class="exact-active-link">
+            <a href="/group-trainings">
                 <div class="card group">
                     <h2 class="title" id="group">Group Trainings</h2>
                 </div>
-            </router-link>
+            </a>
         </div>
         <div class="personal-training-container">
-            <router-link to="/personal-trainings" active-class="active-link" exact-active-class="exact-active-link">
+            <a href="/personal-trainings">
                 <div class="card personal">
                     <h2 class="title" id="personal">Personal Trainings</h2>
                 </div>
-            </router-link>
+            </a>
         </div>
         <div class="trainers-container">
-            <router-link to="/trainers" active-class="active-link" exact-active-class="exact-active-link">
+            <a href="/trainers">
                 <div class="card trainers">
                     <h2 class="title" id="trainers">Trainers</h2>
                 </div>
-            </router-link>
+            </a>
         </div>
     </div>
 </body>
@@ -47,18 +47,8 @@ export default{
 
 <style scoped>
 
-.active-link {
-    text-decoration: none;
-    color: var(--Black);
-}
-
-.exact-active-link {
-    text-decoration: none;
-    color: var(--Black);
-}
-.group-training-container, .personal-training-container, .trainers-container{
-    text-decoration: none;
-    color: var(--Black);
+a{
+    font-size: 16px;
 }
 
 body{

@@ -13,8 +13,8 @@
       <li><router-link to="/schedule">Schedule</router-link></li>
       <li><router-link to="/trainings">Trainings</router-link></li>
       <li><router-link to="/about-us">AboutUs</router-link></li>
-      <li><router-link to="">Clubs</router-link></li>
-      <li><router-link to="">Profile</router-link></li>
+      <li><router-link to="/clubs">Clubs</router-link></li>
+      <li><router-link to="/profile">Profile</router-link></li>
       <li>
         <router-link to="/login">Join</router-link>
       </li>

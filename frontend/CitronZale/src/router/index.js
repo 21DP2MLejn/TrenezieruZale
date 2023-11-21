@@ -7,6 +7,11 @@ import Prices from '../views/Prices.vue'
 import AboutUs from '../views/AboutUs.vue'
 import Schedule from '../views/Schedule.vue'
 import Trainings from '../views/Trainings.vue'
+import PersonalTrainings from '../views/PersonalTrainings.vue'
+import GroupTrainings from '../views/GroupTrainings.vue'
+import Trainers from '../views/Trainers.vue'
+import Clubs from '../views/Clubs.vue'
+import Profile from '../views/Profile.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,6 +55,32 @@ const router = createRouter({
       path: '/trainings',
       name: 'trainings',
       component: Trainings
+    },
+    {
+      path: '/trainers',
+      name: 'trainers',
+      component: Trainers
+
+    },
+    {
+      path: '/personal-trainings',
+      name: 'personal-trainings',
+      component: PersonalTrainings
+    },
+    {
+      path: '/group-trainings',
+      name: 'group-trainings',
+      component: GroupTrainings
+    },
+    {
+      path: '/clubs',
+      name: 'clubs',
+      component: Clubs
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: Profile
     },
   ]
 })
