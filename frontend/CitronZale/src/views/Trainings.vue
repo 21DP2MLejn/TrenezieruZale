@@ -94,7 +94,7 @@ img{
 }
 
 h1{
-    font-weight: var(--font-bold);
+    font-weight: var(--font-very-bold);
     font-size: 5vw;
     color: var(--ShinyShamrock);
 }
