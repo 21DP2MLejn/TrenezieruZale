@@ -3,6 +3,8 @@
         <NavBar />
     </div>
     <div class="container">
+        <div class="profile-picture">
+        </div>
         <div class="user-details">
             <input type="text" class="name" placeholder="Name">
             <input type="text" class="lastname" placeholder="Lastname">
@@ -53,8 +55,21 @@ method:{
     position: relative;
     margin: 0;
     padding: 0;
-    left: 0;
-    top: 0;
+    left: -0.5rem;
+    top: -0.5rem;
 }
 
+.profile-picture{
+   width: 15rem;
+   height: 15rem;
+   background-image: url(../assets/Images/gym_picture5.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   border-radius: 10rem;
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   border: 0.18rem solid var(--PastelGreen)
+}
 </style>
