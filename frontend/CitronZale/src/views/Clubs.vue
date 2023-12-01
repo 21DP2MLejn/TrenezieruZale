@@ -180,4 +180,22 @@ img{
 }
 
 
+@media (max-width: 600px) {
+ .club-container {
+   flex-direction: column;
+ }
+ .club img {
+   width: 100%;
+   height: auto;
+   object-fit: contain;
+   align-self: flex-start;
+   max-height: 200px;
+}
+
+h1, h2 {
+   font-size: 1.5em;
+}
+
+}
+
 </style>
