@@ -9,7 +9,7 @@
       <span class="bar"></span>
     </button>
     <ul class="nav-list" :class="{ 'active': isNavOpen }">
-      <li><router-link to="/prices">Prices</router-link></li>
+      <li><router-link to="/prices" >Prices</router-link></li>
       <li><router-link to="/schedule">Schedule</router-link></li>
       <li><router-link to="/trainings">Trainings</router-link></li>
       <li><router-link to="/about-us">AboutUs</router-link></li>
@@ -127,7 +127,7 @@ li:hover{
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 2.55rem;
+    top: 3.5rem;
     left: 0;
     width: 100%;
     height: auto; 
