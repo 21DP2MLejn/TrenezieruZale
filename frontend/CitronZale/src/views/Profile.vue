@@ -1,4 +1,5 @@
 <template>
+<main>
     <div class="navbar">
         <NavBar />
     </div>
@@ -22,6 +23,7 @@
             <button id="choosecountry" @click="ShowCountry">Country</button>
         </div>
     </div>
+</main>
 </template>
 
 <script>

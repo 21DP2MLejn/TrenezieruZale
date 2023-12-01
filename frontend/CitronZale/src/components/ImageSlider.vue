@@ -1,40 +1,44 @@
 <template>
-<body>
   <div class="background">
-  <div class="image-slider">
-    <div class="slider-image-container">
-      <div class="text-container">
-        <h1>START NOW!</h1>
-        <h2>The only bad workout is one you didn't do.</h2>
-        <p>What are you waiting for? Join NOW and get your dream physique! We have the best deals for everyone!</p>
-        <ul>
-          <li>Spacious exercise hall</li>
-          <li>Wide variety of modern equipment</li>
-          <li>Friendly customer service</li>
-          <li>Professional coaches</li>
-          <li>Exclusive membership deals</li>
-          <li>OPEN 24/7</li>
-        </ul>
+    <div class="image-slider">
+      <div class="slider-image-container">
+        <div class="text-container">
+          <button id="startnow"> START NOW!</button>
+          <h2>The only bad workout is one you didn't do.</h2>
+          <p>What are you waiting for? Join NOW and get your dream physique! We have the best deals for everyone!</p>
+          <ul>
+            <li>Spacious exercise hall</li>
+            <li>Wide variety of modern equipment</li>
+            <li>Friendly customer service</li>
+            <li>Professional coaches</li>
+            <li>Exclusive membership deals</li>
+            <li>OPEN 24/7</li>
+          </ul>
+        </div>
+        <vue-responsive-image
+          :image-url="currentImageSrc"
+          :image-ratio="16/9"
+          class="slider-image"
+        ></vue-responsive-image>
       </div>
-      <img :key="currentIndex" :src="currentImageSrc" alt="Slider Image" class="slider-image" />
-    </div>
-    <div class="button-container">
-      <button @click="prevImage"><p> &leftarrow; </p></button>
-      <button @click="nextImage"><p> &RightArrow; </p></button>
+      <div class="button-container">
+        <button @click="prevImage"><p> &leftarrow; </p></button>
+        <button @click="nextImage"><p> &RightArrow; </p></button>
+      </div>
     </div>
   </div>
-</div>
-</body>
-
-</template>
-
-
-<script>
-import gymPicture1 from '@/assets/images/gym_picture3.jpg';
-import gymPicture2 from '@/assets/images/gym_picture5.jpg';
-import gymPicture3 from '@/assets/images/gym_picture1.jpg';
-
-export default {
+ </template>
+ 
+ <script>
+ import gymPicture1 from '@/assets/images/gym_picture3.jpg';
+ import gymPicture2 from '@/assets/images/gym_picture5.jpg';
+ import gymPicture3 from '@/assets/images/gym_picture1.jpg';
+ import VueResponsiveImage from 'vue-responsive-image';
+ 
+ export default {
+  components: {
+    VueResponsiveImage
+  },
   data() {
     return {
       images: [gymPicture1, gymPicture2, gymPicture3],
@@ -75,10 +79,50 @@ export default {
       this.nextImage();
     }, 7000);
   },
-};
-</script>
+ };
+ </script>
   
 <style scoped>
+
+#startnow{
+  left: 10vw;
+  top: 0.5rem;
+}
+
+button {
+  --b: 3px;   /* border thickness */
+  --s: .15em; /* size of the corner */
+  
+  padding: calc(.05em + var(--s)) calc(.3em + var(--s));
+  color: var(--black);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--black) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .2em;
+}
+button:hover,
+button:focus-visible{
+  --_p: 0px;
+  outline-color: var(--black);
+  outline-offset: .05em;
+}
+button:active {
+  background: var(--black);
+  color: var(--TeaGreen);
+}
+
+button{
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: none;
+    margin: .1em;
+    transition: 0.5s;
+    position: relative;
+    top: -4px;
+}
 
 body{
   width: 100vw;
@@ -103,11 +147,11 @@ h1, h2 {
 }
 
 .image-slider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ position: relative;
 }
 
 .slider-image-container {
@@ -119,12 +163,18 @@ h1, h2 {
 }
 
 .slider-image {
-  width: 90%;
-  height: auto;
-  opacity: 1;
-  animation: fade 1.5s forwards;
-  position: relative;
-  left: 12rem;
+ width: 90%;
+ height: auto;
+ opacity: 1;
+ animation: fade 1.5s forwards;
+ position: relative;
+ left: 12rem;
+ transition: 0.3s ease;
+}
+
+.slider-image:hover {
+ transform: scale(1.05);
+ box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 @keyframes fade {
@@ -142,7 +192,7 @@ h1, h2 {
   left: 10rem;
 }
 
-button {
+.button-container button {
   margin: 10px;
   width: 6rem;
   height: 3rem;
@@ -159,13 +209,13 @@ button {
   left: 8rem;
 }
 
-button:hover {
+.button-container button:hover {
   background-color: var(--PastelGreen);
   transform: scale(1.05);
   opacity: 100%;
 }
 
-  @media (max-width: 992px) {
+@media (max-width: 992px) {
   .slider-image-container {
     width: 100vw;
     height: 70vh;
@@ -174,15 +224,20 @@ button:hover {
   button {
     display: none;
   }
-}
 
-@media (max-width: 721px) {
+
   .text-container {
     color: var(--Black);
     width: 100%;
     height: auto; 
     top: 30rem;
   }
+
+#startnow {
+  display: block;
+  left: 0vw;
+  top: 0.5rem;
+}
 
   .slider-image-container {
     height: 100vh;
@@ -194,5 +249,41 @@ button:hover {
     width: 100vw;
   }
 
+  .image-slider {
+   display: block;
+ }
+
+ .text-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   top: 58vh;
+ }
 }
+
+@media (max-width: 720px ){
+
+    .text-container{
+      top: 48vh;
+    }
+
+}
+
+@media (max-width: 600px ){
+
+    .text-container{
+      top: 40vh;
+    }
+}
+
+
+@media screen and (max-width: 479px) {
+
+    .text-container{
+      top:35vh
+    }
+
+}
+
 </style>
